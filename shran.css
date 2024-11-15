@@ -1,0 +1,12 @@
+body {
+    
+    background-size: cover; /* Poskrbi, da slika pokrije celoten zaslon */
+    background-position: center; /* Sredi sliko na strani */
+    background-attachment: fixed; /* Ohranite ozadje fiksno pri pomikanju strani */
+    color: white; /* Bele barve besedilo, da bo vidno na temnem ozadju */
+}
+
+/* To lahko tudi dodate, če želite, da slika pokriva samo določen del strani */
+header, .container {
+    background: rgba(0, 0, 0, 0.5); /* Polprosojni temni sloj, da je besedilo bolj berljivo */
+}

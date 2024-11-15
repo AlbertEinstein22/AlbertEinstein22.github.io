@@ -1,0 +1,12 @@
+body {
+    background: linear-gradient(45deg, #d1a15e 25%, #b67a4b 25%, #b67a4b 50%, #d1a15e 50%, #d1a15e 75%, #b67a4b 75%, #b67a4b 100%);
+    background-size: 50px 50px; /* Nastavi velikost ponavljajočih se trakov */
+    color: #333;  /* Nastavi osnovno barvo besedila na temno sivo */
+    font-family: 'Times New Roman', serif; /* Nastavi pisavo za besedilo */
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.8); /* Polprosojna bela barva za prekrivanje */
+    padding: 20px;
+    border-radius: 10px;
+}

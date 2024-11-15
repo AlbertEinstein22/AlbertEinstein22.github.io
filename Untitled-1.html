@@ -1,0 +1,230 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UREŽI.SI</title>
+    <link rel="stylesheet" href="style.css"> <!-- Povezava na CSS datoteko -->
+    <style>
+        /* Basic CSS for hiding and showing sections */
+        .section {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+            cursor: pointer;
+            font-size: 20px;  /* Increase font size for navigation */
+            font-family: 'Times New Roman', serif;
+            color: black;
+        }
+
+        /* Središčenje vsebine */
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Pisava za naslov */
+        h1, h2 {
+            font-family: 'Impact', sans-serif;
+            font-size: 40px; /* Larger text */
+            color: black;
+            font-weight: bold;
+        }
+
+        /* Pisava za besedilo in alineje */
+        p, .service-item h3 {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px; /* Larger text */
+            color: black;
+        }
+
+        .service-item {
+            font-family: 'Impact', sans-serif;
+            font-size: 24px; /* Larger text for service titles */
+            font-weight: bold;
+        }
+
+        /* Video styling */
+        #video-container {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            background-color: #000; /* Black background for video section */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow for emphasis */
+        }
+        iframe {
+            width: 100%;
+            height: 480px;
+        }
+
+        /* Cenik styling */
+        .price-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .price-item {
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .price-item h3 {
+            font-family: 'Impact', sans-serif;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .price-item p {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            color: #333;
+        }
+
+        /* Footer styling */
+        footer {
+            position: fixed;
+            left: 10px;
+            bottom: 10px;
+            font-family: 'Times New Roman', serif;
+            font-size: 14px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Glava spletne strani -->
+    <header>
+        <div class="container">
+            <h1>Dobrodošli na Ureži.SI</h1>
+            <nav>
+                <ul>
+                    <li onclick="showSection('home')">Domov</li>
+                    <li onclick="showSection('services')">Storitve</li>
+                    <li onclick="showSection('pricing')">Cenik</li> <!-- New Pricing section -->
+                    <li onclick="showVideo()">Predvajaj Video</li> <!-- Video button -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Odsek Domov -->
+    <section id="home" class="section active">
+        <div class="container">
+            <h2>Izrežite, kar želite!</h2>
+            <p>Stole, mize vam lahko vrežemo samo v Osnovni šoli Šmihel.</p>
+            <p>V šoli rezljamo v les, kamen in prevleke na mizi.</p>
+        </div>
+    </section>
+
+    <!-- Odsek Storitve -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2>Naše Storitve</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <h3>Rezanje v les</h3>
+                    <p>Izrezovanje različnih oblik in črk v šolske mize.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Rezanje v kamen</h3>
+                    <p>Obdelava kamna za posebne projektne zahteve, npr. v robnik od ceste.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Prevleke na mizi</h3>
+                    <p>Izrezovanje v prevleke za mize.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cenik Section -->
+    <section id="pricing" class="section">
+        <div class="container">
+            <h2>Cenik Storitev</h2>
+            <div class="price-list">
+                <!-- Cena za 4-mestno besedo -->
+                <div class="price-item">
+                    <h3>4-mestna beseda</h3>
+                    <p>Cena: <strong>0.5 €</strong> za vsako 4-mestno besedo.</p>
+                </div>
+
+                <!-- Cena za posebne znake -->
+                <div class="price-item">
+                    <h3>Posebni znaki</h3>
+                    <p>Cena: <strong>0.75 €</strong> za vsak poseben znak.</p>
+                    <p><strong>Seznam posebnih znakov:</strong></p>
+                    <p>! @ # $ % ^ & * ( ) - _ = + [ ] { } | \ ; : ' " , . / ? < >  ~</p>
+                    <p><strong>Emojiji:</strong></p>
+                    <p>😀 😃 😄 😁 😆 😅 😂 🤣 😊 😇 🙂 🙃 😉 😍 😘 😗 😙 😚 🥰 😋 😜 😝 🤑 🤗 🤩</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <div id="video-container">
+        <!-- Embed YouTube video -->
+        <iframe id="video-iframe" src="https://www.youtube.com/embed/bIrkg-lR61A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
+    <!-- Noga spletne strani -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Ureži.si - Vse pravice pridržane</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for toggling sections and video -->
+    <script>
+        function showSection(section) {
+            // Hide all sections
+            let sections = document.querySelectorAll('.section');
+            sections.forEach(function (el) {
+                el.classList.remove('active');
+            });
+
+            // Hide the video and stop it when switching sections
+            let videoContainer = document.getElementById('video-container');
+            videoContainer.style.display = 'none';
+            stopVideo();
+
+            // Show the selected section
+            let activeSection = document.getElementById(section);
+            activeSection.classList.add('active');
+        }
+
+        function showVideo() {
+            // Show video section
+            let videoContainer = document.getElementById('video-container');
+            videoContainer.style.display = 'block';
+
+            // Show the video section and hide other content
+            let sections = document.querySelectorAll('.section');
+            sections.forEach(function (el) {
+                el.classList.remove('active');
+            });
+        }
+
+        function stopVideo() {
+            // Stop the video by resetting the iframe src
+            var iframe = document.getElementById('video-iframe');
+            var videoSrc = iframe.src;
+            iframe.src = '';
+            iframe.src = videoSrc; // Reassign the original src to restart the video if needed
+        }
+    </script>
+</body>
+</html>
