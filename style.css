@@ -1,12 +1,19 @@
+
+/* Style for the body element */
 body {
-    background: linear-gradient(45deg, #d1a15e 25%, #b67a4b 25%, #b67a4b 50%, #d1a15e 50%, #d1a15e 75%, #b67a4b 75%, #b67a4b 100%);
-    background-size: 50px 50px; /* Nastavi velikost ponavljajočih se trakov */
-    color: #333;  /* Nastavi osnovno barvo besedila na temno sivo */
-    font-family: 'Times New Roman', serif; /* Nastavi pisavo za besedilo */
+    /* Set the background to include both an image and a linear gradient */
+    background: linear-gradient(45deg, #d1a15e 25%, #b67a4b 25%, #b67a4b 50%, #d1a15e 50%, #d1a15e 75%, #b67a4b 75%, #b67a4b 100%),
+                url('https://th.bing.com/th/id/R.cec1188377cf247a2e867859fcdc41a7?rik=axd0tL2IPUSv5w&riu=http%3a%2f%2fromula.si%2fwp-content%2fuploads%2f2017%2f12%2fbukov-les.png&ehk=xSPizc%2bzRVelBmLUGLP1cFF9tcDifzcLypg7cDHLH14%3d&risl=&pid=ImgRaw&r=0');
+    background-size: 50px 50px;  /* Controls the size of the gradient stripes */
+    background-repeat: repeat;  /* Ensures the gradient pattern repeats */
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    color: #333;  /* Dark gray text color */
+    font-family: 'Times New Roman', serif; /* Sets the font to Times New Roman */
 }
 
+/* Style for the header element */
 header {
-    background-color: rgba(255, 255, 255, 0.8); /* Polprosojna bela barva za prekrivanje */
-    padding: 20px;
-    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for the header */
+    padding: 20px;  /* Adds padding inside the header */
+    border-radius: 10px;  /* Rounds the corners of the header */
 }
