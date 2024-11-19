@@ -1,9 +1,8 @@
-
 /* Style for the body element */
 body {
-    /* Set the background to include both an image and a linear gradient */
+    /* Set the background to include both a white color and a linear gradient */
     background: linear-gradient(45deg, #d1a15e 25%, #b67a4b 25%, #b67a4b 50%, #d1a15e 50%, #d1a15e 75%, #b67a4b 75%, #b67a4b 100%),
-                url('https://th.bing.com/th/id/R.cec1188377cf247a2e867859fcdc41a7?rik=axd0tL2IPUSv5w&riu=http%3a%2f%2fromula.si%2fwp-content%2fuploads%2f2017%2f12%2fbukov-les.png&ehk=xSPizc%2bzRVelBmLUGLP1cFF9tcDifzcLypg7cDHLH14%3d&risl=&pid=ImgRaw&r=0');
+                white; /* Set background image as white */
     background-size: 50px 50px;  /* Controls the size of the gradient stripes */
     background-repeat: repeat;  /* Ensures the gradient pattern repeats */
     background-attachment: fixed; /* Keeps the background fixed while scrolling */
