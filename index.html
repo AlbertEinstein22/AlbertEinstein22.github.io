@@ -111,16 +111,6 @@
             font-size: 14px;
             color: black;
         }
-
-        /* Styling for the school history section */
-        .history-text {
-            font-family: 'Times New Roman', serif;
-            font-size: 18px;
-            text-align: left;
-            margin-top: 20px;
-            color: #333;
-            padding: 0 20px;
-        }
     </style>
 </head>
 <body>
@@ -133,7 +123,7 @@
                     <li onclick="showSection('home')">Domov</li>
                     <li onclick="showSection('services')">Storitve</li>
                     <li onclick="showSection('pricing')">Cenik</li> <!-- New Pricing section -->
-                    <li onclick="showSection('school-history')">O Šoli</li> <!-- New "About School" section -->
+                    <li onclick="showSection('school-history')">O Šoli</li> <!-- O Šoli section -->
                     <li onclick="showVideo()">Predvajaj Video</li> <!-- Video button -->
                 </ul>
             </nav>
@@ -171,13 +161,10 @@
         <div class="container">
             <h2>Cenik Storitev</h2>
             <div class="price-list">
-                <!-- Cena za 4-mestno besedo -->
                 <div class="price-item">
                     <h3>4-mestna beseda</h3>
                     <p>Cena: <strong>0.5 €</strong> za vsako 4-mestno besedo.</p>
                 </div>
-
-                <!-- Cena za posebne znake -->
                 <div class="price-item">
                     <h3>Posebni znaki</h3>
                     <p>Cena: <strong>0.75 €</strong> za vsak poseben znak.</p>
@@ -197,15 +184,14 @@
             <div class="history-text">
                 <h3>Nekaj iz preteklosti</h3>
                 <p>Zapisi so povzeti iz kronik osnovne šole v Šmihelu pri Novem mestu.</p>
-                <p>16. 10. 1864 je dan, ko je bila v Šmihelu ustanovljena šola, ki je delovala v cerkovnikovi hiši. Njen prvi učitelj je bil Karol Krištof, ki je služboval v šoli od njene ustanovitve do leta 1871, ko ga je zamenjal učitelj Alojzij Jerše, ki je to službo opravljal do leta 1874. Šele naslednji učitelj, to je Janez Novak, je pričel s sistematičnim pisanjem kronike šole...</p>
-                <!-- (Dodaj preostale zgodovinske podatke tukaj, kot v prejšnjem besedilu) -->
+                <p>16. 10. 1864 je dan, ko je bila v Šmihelu ustanovljena šola, ki je delovala v cerkovnikovi hiši. Njen prvi učitelj je bil Karol Krištof...</p>
+                <p>... 16. oktobra 2014 smo na šoli slovesko obeležili 150. obletnico ustanovitve Osnovne šole Šmihel. V jubilejnem šolskem letu 2014/2015 je šola postala že drugič najuspešnejša šola MO Novo mesto v tekmovanju iz znanj.</p>
             </div>
         </div>
     </section>
 
     <!-- Video Section -->
     <div id="video-container">
-        <!-- Embed YouTube video -->
         <iframe id="video-iframe" src="https://www.youtube.com/embed/bIrkg-lR61A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
 
@@ -216,5 +202,23 @@
         </div>
     </footer>
 
-    <!--
+    <!-- JavaScript for toggling sections and video -->
+    <script>
+        function showSection(section) {
+            // Hide all sections
+            let sections = document.querySelectorAll('.section');
+            sections.forEach(function (el) {
+                el.classList.remove('active');
+            });
+
+            // Hide the video and stop it when switching sections
+            let videoContainer = document.getElementById('video-container');
+            videoContainer.style.display = 'none';
+            stopVideo();
+
+            // Show the selected section
+            let activeSection = document.getElementById(section);
+            if (activeSection) {
+                activeSection
+
 
