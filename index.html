@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -122,7 +122,7 @@
                 <ul>
                     <li onclick="showSection('home')">Domov</li>
                     <li onclick="showSection('services')">Storitve</li>
-                    <li onclick="showSection('pricing')">Cenik</li> <!-- New Pricing section -->
+                    <li onclick="showSection('pricing')">Cenik</li>
                     <li onclick="showVideo()">Predvajaj Video</li> <!-- Video button -->
                 </ul>
             </nav>
@@ -212,15 +212,19 @@
         }
 
         function showVideo() {
-            // Show video section
-            let videoContainer = document.getElementById('video-container');
-            videoContainer.style.display = 'block';
-
-            // Show the video section and hide other content
+            // Hide all sections except for video
             let sections = document.querySelectorAll('.section');
             sections.forEach(function (el) {
                 el.classList.remove('active');
             });
+
+            // Hide the Cenik section as well
+            let pricingSection = document.getElementById('pricing');
+            pricingSection.classList.remove('active');
+
+            // Show the video container
+            let videoContainer = document.getElementById('video-container');
+            videoContainer.style.display = 'block';
         }
 
         function stopVideo() {
@@ -233,3 +237,4 @@
     </script>
 </body>
 </html>
+
