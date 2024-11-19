@@ -206,19 +206,3 @@
     <script>
         function showSection(section) {
             // Hide all sections
-            let sections = document.querySelectorAll('.section');
-            sections.forEach(function (el) {
-                el.classList.remove('active');
-            });
-
-            // Hide the video and stop it when switching sections
-            let videoContainer = document.getElementById('video-container');
-            videoContainer.style.display = 'none';
-            stopVideo();
-
-            // Show the selected section
-            let activeSection = document.getElementById(section);
-            if (activeSection) {
-                activeSection
-
-
