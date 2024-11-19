@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -134,7 +134,7 @@
         <div class="container">
             <h2>Izrežite, kar želite!</h2>
             <p>Stole, mize vam lahko vrežemo samo v Osnovni šoli Šmihel v Novem mestu.</p>
-            <p>V šoli rezljamo v les in kamen.</p>
+            <p>V šoli rezljamo v les in kamen .</p>
         </div>
     </section>
 
@@ -160,10 +160,13 @@
         <div class="container">
             <h2>Cenik Storitev</h2>
             <div class="price-list">
+                <!-- Cena za 4-mestno besedo -->
                 <div class="price-item">
                     <h3>4-mestna beseda</h3>
                     <p>Cena: <strong>0.5 €</strong> za vsako 4-mestno besedo.</p>
                 </div>
+
+                <!-- Cena za posebne znake -->
                 <div class="price-item">
                     <h3>Posebni znaki</h3>
                     <p>Cena: <strong>0.75 €</strong> za vsak poseben znak.</p>
@@ -178,6 +181,7 @@
 
     <!-- Video Section -->
     <div id="video-container">
+        <!-- Embed YouTube video -->
         <iframe id="video-iframe" src="https://www.youtube.com/embed/bIrkg-lR61A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
 
@@ -204,21 +208,28 @@
 
             // Show the selected section
             let activeSection = document.getElementById(section);
-            if (activeSection) {
-                activeSection.classList.add('active');
-            }
+            activeSection.classList.add('active');
         }
 
         function showVideo() {
+            // Show video section
             let videoContainer = document.getElementById('video-container');
             videoContainer.style.display = 'block';
+
+            // Show the video section and hide other content
+            let sections = document.querySelectorAll('.section');
+            sections.forEach(function (el) {
+                el.classList.remove('active');
+            });
         }
 
         function stopVideo() {
-            let videoIframe = document.getElementById('video-iframe');
-            videoIframe.src = videoIframe.src; // This effectively stops the video
+            // Stop the video by resetting the iframe src
+            var iframe = document.getElementById('video-iframe');
+            var videoSrc = iframe.src;
+            iframe.src = '';
+            iframe.src = videoSrc; // Reassign the original src to restart the video if needed
         }
     </script>
 </body>
 </html>
-
